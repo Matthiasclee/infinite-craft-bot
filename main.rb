@@ -20,9 +20,9 @@ items.each do |item|
     loop do
       result = check_pair(item[0], item_1[0])
       break if result
-      puts "Ratelimited. Waiting 15 minutes..."
-      600.times do |x|
-        print "\r#{x}/950 seconds"
+      puts "Ratelimited. Waiting 20 minutes..."
+      1200.times do |x|
+        print "\r#{x}/1200 seconds"
         sleep 1
       end
       puts
