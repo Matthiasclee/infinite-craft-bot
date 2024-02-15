@@ -50,7 +50,7 @@ begin
     puts "Sleeping for 10 seconds to prevent ratelimit"
     sleep(10) # no ratelimit
   end
-rescue Interrupt
+rescue
   puts "Interrupted, continuing..."
 end
 
