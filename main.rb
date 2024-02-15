@@ -38,7 +38,12 @@ begin
         STDOUT.puts "Something went wrong, you are most likely being ratelimited. Trying again in 20 minutes..."
         1200.times do |x|
           print "\r#{x}/1200 seconds"
+          begin
           sleep 1
+          rescue Interrupt
+            STDOUT.puts "Interrupted, continuing..."
+          end
+            
         end
         STDOUT.puts
       end
@@ -53,7 +58,11 @@ begin
         STDOUT.puts "#{print_item result} is a new discovery!"
         File.write("discoveries.ignore", recipe, mode: ?a)
       end
-      sleep(5) # no ratelimit
+      begin
+        sleep(5) # no ratelimit
+      rescue Interrupt
+        STDOUT.puts "Interrupted, continuing..."
+      end
     end
   end
 rescue
