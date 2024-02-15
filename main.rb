@@ -39,7 +39,7 @@ begin
       end
       recipe = "#{print_item item} + #{print_item item_1} = #{print_item result}"
       puts recipe
-      File.write("recipes.ignore", recipe, mode: ?a)
+      File.write("recipes.ignore", recipe + "\n", mode: ?a)
       if result_1["isNew"]
         puts "#{print_item result} is a new discovery!"
         File.write("discoveries.ignore", recipe, mode: ?a)
