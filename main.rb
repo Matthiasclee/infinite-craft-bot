@@ -26,9 +26,26 @@ def print_item(item)
   "#{item[0]}"
 end
 
+skip_item_1 = !!ARGV[0]
+skip_item_2 = !!ARGV[1]
+
 items.each_with_index do |item, i|
+  if skip_item_1
+    if i < items_no_icons.index(ARGV[0])
+      next
+    end
+    skip_item_1 = false
+  end
+  
+
   items.each_with_index do |item_1, i_1|
-    # Skip to pick up somewhere
+    if skip_item_2
+      if i_1 < items_no_icons.index(ARGV[1])
+        next
+      end
+      skip_item_2 = false
+    end
+
     result_1 = nil
     loop do
       result_1 = check_pair(item[0], item_1[0])
