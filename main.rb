@@ -54,4 +54,4 @@ rescue Interrupt
   puts "Interrupted, continuing..."
 end
 
-
+File.write("items.json", items.to_json)
