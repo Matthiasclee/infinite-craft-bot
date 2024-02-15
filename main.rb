@@ -2,7 +2,6 @@ require "json"
 
 items = JSON.parse(File.read("items.json"))
 items_no_icons = items.map{|x| x[0]}
-recipes = File.read("recipes.ignore")
 
 def check_pair(item_1, item_2)
   url = "https://neal.fun/api/infinite-craft/pair?first=#{item_1}&second=#{item_2}"
