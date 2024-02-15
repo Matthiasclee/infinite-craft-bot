@@ -5,7 +5,8 @@ items = JSON.parse(File.read("items.json"))
 def check_pair(item_1, item_2)
   url = "https://neal.fun/api/infinite-craft/pair?first=#{item_1}&second=#{item_2}"
   curl_command = "curl -s -H 'Referer: https://neal.fun/infinite-craft/' '#{url}'"
-  item_info = JSON.parse `#{curl_command}`
+  response = `#{curl_command}`
+  item_info = JSON.parse response 
   return item_info
 end
 
@@ -21,6 +22,9 @@ items.each do |item|
       items << result 
     end
     puts "#{print_item item} + #{print_item item_1} = #{print_item result}"
-    sleep(rand(0..2)) # no ratelimit
+    sleep(0.5) # no ratelimit
   end
+
+  puts "Sleeping for 10 seconds to prevent ratelimit"
+  sleep(10) # no ratelimit
 end
