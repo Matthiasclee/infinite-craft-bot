@@ -22,7 +22,7 @@ end
 begin
   items.each do |item|
     items.each do |item_1|
-      result = nil
+      result_1 = nil
       loop do
         result_1 = check_pair(item[0], item_1[0])
         break if result_1
