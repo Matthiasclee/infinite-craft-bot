@@ -22,7 +22,7 @@ items.each do |item|
       items << result 
     end
     puts "#{print_item item} + #{print_item item_1} = #{print_item result}"
-    sleep(0.5) # no ratelimit
+    sleep(5) # no ratelimit
   end
 
   puts "Sleeping for 10 seconds to prevent ratelimit"
