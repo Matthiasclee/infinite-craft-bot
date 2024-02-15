@@ -17,6 +17,7 @@ end
 
 items.each do |item|
   items.each do |item_1|
+    result = nil
     loop do
       result = check_pair(item[0], item_1[0])
       break if result
