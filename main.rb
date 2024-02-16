@@ -68,6 +68,6 @@ items.each_with_index do |item, i|
       STDOUT.puts "#{print_item result} is a new discovery!"
       File.write("discoveries.ignore", recipe, mode: ?a)
     end
-    sleep(5) # no ratelimit
+    sleep(2) # no ratelimit
   end
 end
