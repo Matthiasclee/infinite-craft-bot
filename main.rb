@@ -26,7 +26,7 @@ def check_pair(item_1, item_2)
     end
 
     break if exit_loop
-    puts "Restarting"
+    STDOUT.puts "Restarting"
     x.kill
   end
 
