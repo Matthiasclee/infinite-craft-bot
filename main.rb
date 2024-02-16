@@ -10,7 +10,26 @@ end
 def check_pair(item_1, item_2)
   url = "https://neal.fun/api/infinite-craft/pair?first=#{item_1}&second=#{item_2}"
   curl_command = "curl -s -H 'Referer: https://neal.fun/infinite-craft/' '#{url}'"
-  response = `#{curl_command}`
+
+  response=nil
+  loop do
+    st = Time.now.to_i
+    exit_loop = false
+    x=Thread.start do
+      response = `#{curl_command}`
+    end
+    while (Time.now.to_i - st) < 5
+      if response
+        exit_loop = true
+        break
+      end
+    end
+
+    break if exit_loop
+    puts "Restarting"
+    x.kill
+  end
+
   return false if response.include?("error code: 1015")
   begin
     item_info = JSON.parse response 
