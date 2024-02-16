@@ -18,7 +18,7 @@ def check_pair(item_1, item_2)
     x=Thread.start do
       response = `#{curl_command}`
     end
-    while (Time.now.to_i - st) < 5
+    while (Time.now.to_i - st) < 20
       if response
         exit_loop = true
         break
