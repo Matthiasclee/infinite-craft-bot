@@ -66,7 +66,7 @@ items.each_with_index do |item, i|
     File.write("recipes.ignore", recipe + "\n", mode: ?a)
     if result_1["isNew"]
       STDOUT.puts "#{print_item result} is a new discovery!"
-      File.write("discoveries.ignore", recipe, mode: ?a)
+      File.write("discoveries.ignore", recipe + "\n", mode: ?a)
     end
     sleep(1) # no ratelimit
   end
