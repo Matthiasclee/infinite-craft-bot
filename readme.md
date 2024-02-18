@@ -1,8 +1,11 @@
 # Infinite Craft Bot
 This program uses the [Infinite Craft](https://neal.fun/infinite-craft/) API to discover new items.
+<br>
+Using this, I was able to discover a lot of items and recipes, including 84 new discoveries, however, Cloudflare started
+filtering its requests, so I had to shut it down. This repo contains the results of everything I found.
 
 ## Stats
-* Total recipes checked: 113,765
+* Total recipes checked: 113,765 *Additional recipes checked after the API started filtering requests have been omitted.*
 * Total unique items found: 6,114
 * Total new discoveries: 84
 
